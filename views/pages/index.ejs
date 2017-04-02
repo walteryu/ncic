@@ -2,6 +2,10 @@
 <html>
 <head>
   <% include ../partials/header.ejs %>
+
+  <!-- ESRI API -->
+  <!-- <link rel="stylesheet" href="https://js.arcgis.com/4.3/esri/css/main.css"> -->
+  <script src="https://js.arcgis.com/4.3/"></script>
 </head>
 
 <body>
@@ -20,6 +24,9 @@
   </div>
 </div>
 <div class="container">
+  <!-- ESRI Map -->
+  <div id="viewDiv"></div>
+
   <div class="alert alert-info text-center" role="alert">
     To deploy your own copy, and learn the fundamentals of the Heroku platform, head over to the <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs" class="alert-link">Getting Started with Node on Heroku</a> tutorial.
   </div>
