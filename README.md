@@ -1,16 +1,20 @@
 # HES E8, Spring 2017
 
-## HW9: ESRI JS API + Heroku + Node.js Application:
+## HW9: ESRI JS API + Heroku + Node.js Web App:
 
-Node.js web app using the ESRI JS API deployed on Heroku built using the following components:
+Node.js web app using the ESRI JS API as follows:
 
-Heroku Tutorial:
-https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction
+* Live URL: https://e8-hw9.herokuapp.com/map
+* Developed using Node.js and Express web frameworks
+* ESRI and Heroku templates used as referenced below
+* App shows...
 
-ESRI JS API Example:
-https://developers.arcgis.com/javascript/latest/sample-code/sandbox/index.html?sample=get-started-mapview
+References:
+* ESRI JS API, 2D Map Template: http://arcg.is/2nytHZt
+* ESRI JS API, Layer Template: http://arcg.is/2nyNuIe
+* Heroku Node.js Tutorial: http://bit.ly/2nyFTJN
 
-# node-js-getting-started
+# Heroku Node.js Tutorial Instructions
 
 A barebones Node.js app using [Express 4](http://expressjs.com/).
 
