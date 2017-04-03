@@ -2,16 +2,25 @@
 
 ## HW9: ESRI JS API + Heroku + Node.js Web App:
 
-Node.js web app using the ESRI JS API as follows:
+Node.js web app using the ESRI JS API and as follows:
 
 * Live URL: https://e8-hw9.herokuapp.com/map
+* Shows ESRI AGOL major US cities and freeway layers
 * Developed using Node.js and Express web frameworks
 * ESRI and Heroku templates used as referenced below
-* App shows...
 
-References:
+Details about the map and feature layers:
+
+* Map is centered on San Francisco, CA
+* City/freeway layers are added with FeatureLayer()
+
+## References:
+
+Web app was developed using these templates/tutorials:
+
 * ESRI JS API, 2D Map Template: http://arcg.is/2nytHZt
 * ESRI JS API, Layer Template: http://arcg.is/2nyNuIe
+* ESRI AGOL, US Major Cities Layer: http://arcg.is/2nyyvht
 * Heroku Node.js Tutorial: http://bit.ly/2nyFTJN
 
 # Heroku Node.js Tutorial Instructions
