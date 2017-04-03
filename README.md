@@ -1,6 +1,4 @@
-# HES E8, Spring 2017
-
-## HW9: ESRI JS API + Heroku + Node.js Web App:
+# HES E8, Spring 2017 HW9: Node.js Web App
 
 Node.js web app using the ESRI JS API and as follows:
 
