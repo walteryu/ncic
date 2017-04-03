@@ -25,29 +25,38 @@
     require([
       "esri/Map",
       "esri/views/MapView",
+      "esri/layers/FeatureLayer",
+      // "esri/layers/TileLayer",
+      // "dojo/dom",
+      // "dojo/on",
       "dojo/domReady!"
-    ], function(Map, MapView) {
+    ], function(Map, MapView, FeatureLayer) {
 
       var map = new Map({
-        basemap: "streets"
-        // basemap: "satellite"
+        // basemap: "streets"
+        basemap: "hybrid"
       });
 
       var view = new MapView({
         container: "viewDiv",
         map: map,
-        zoom: 12,
-        center: [-122.431297,37.773972]
+        // zoom: 12,
+        // center: [-122.431297,37.773972]
+
+        extent: { // autocasts as new Extent()
+          xmin: -9177811,
+          ymin: 4247000,
+          xmax: -9176791,
+          ymax: 4247784,
+          spatialReference: 102100
+        }
       });
-      //
-      // var featureLayer = new FeatureLayer({
-      //   url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0",
-      //   outFields: ["TRL_NAME","CITY_JUR", "LAT", "LON"],
-      //   popupTemplate: {
-      //     title: "{TRL_NAME}",
-      //     content: "This trail is in {CITY_JUR} and located at {LAT},{LON}."
-      //   }
-      // });
+
+      var featureLayer = new FeatureLayer({
+        url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Landscape_Trees/FeatureServer/0"
+      });
+
+      map.add(featureLayer);
 
     });
   </script>
