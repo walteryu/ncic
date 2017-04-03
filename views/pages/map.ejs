@@ -64,6 +64,8 @@
 
   <!-- Load stylesheet/partial in order, removes gap below navbar -->
   <link rel="stylesheet" href="https://js.arcgis.com/4.3/esri/css/main.css">
+
+  <!-- Load Heroku node.js template partial -->
   <% include ../partials/header.ejs %>
 
   <!-- Override css to size map/navbar -->
@@ -84,8 +86,10 @@
 </head>
 
 <body>
+  <!-- Load Heroku node.js template partial -->
   <% include ../partials/nav.ejs %>
 
+  <!-- Load main map container -->
   <div id="viewDiv"></div>
 </body>
 </html>
