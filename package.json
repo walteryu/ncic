@@ -1,7 +1,7 @@
 {
   "name": "node-esri-heroku",
   "version": "1.0.0",
-  "description": "Node.js web app with ESRI JS API deployed on Herok",
+  "description": "Node.js web app with ESRI JS API deployed on Heroku",
   "engines": {
     "node": "5.9.1"
   },
