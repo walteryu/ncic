@@ -16,19 +16,46 @@
 
       var map = new Map({
         basemap: "streets"
+        // basemap: "satellite"
       });
 
       var view = new MapView({
         container: "viewDiv",
         map: map,
-        zoom: 4,
-        center: [15, 65]
+        zoom: 12,
+        center: [-122.431297,37.773972]
       });
+      //
+      // var featureLayer = new FeatureLayer({
+      //   url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0",
+      //   outFields: ["TRL_NAME","CITY_JUR", "LAT", "LON"],
+      //   popupTemplate: {
+      //     title: "{TRL_NAME}",
+      //     content: "This trail is in {CITY_JUR} and located at {LAT},{LON}."
+      //   }
+      // });
 
     });
   </script>
-  
+
+  <!-- Load stylesheet/partial in order, removes gap below navbar -->
+  <link rel="stylesheet" href="https://js.arcgis.com/4.3/esri/css/main.css">
   <% include ../partials/header.ejs %>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      /*margin-top: 0px;*/
+    }
+    .navbar {
+      margin-bottom: 0px;
+    }
+  </style>
 
 </head>
 
