@@ -38,24 +38,27 @@
       var view = new MapView({
         container: "viewDiv",
         map: map,
-        // zoom: 12,
-        // center: [-122.431297,37.773972]
 
-        extent: { // autocasts as new Extent()
-          xmin: -9177811,
-          ymin: 4247000,
-          xmax: -9176791,
-          ymax: 4247784,
-          spatialReference: 102100
-        }
+        // Zoom and center map on San Francisco, CA
+        zoom: 10,
+        center: [-122.431297,37.773972]
       });
 
-      var featureLayer = new FeatureLayer({
-        url: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Landscape_Trees/FeatureServer/0"
+      // Function Reference, ESRI JS API: http://arcg.is/2nyyvht
+      // Map Layer Referece: http://arcg.is/2nyyvht
+      var cityLayer = new FeatureLayer({
+        url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Major_Cities/FeatureServer"
       });
 
-      map.add(featureLayer);
+      // Function Reference, ESRI JS API: http://arcg.is/2nyyvht
+      // Map Layer Referece: http://arcg.is/2nyzgr4
+      var freewayLayer = new FeatureLayer({
+        url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Freeway_System_analysis/FeatureServer"
+      });
 
+      // Render layers using add function
+      map.add(cityLayer);
+      map.add(freewayLayer);
     });
   </script>
 
