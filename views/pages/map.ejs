@@ -59,6 +59,41 @@
         url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Freeway_System_analysis/FeatureServer"
       });
 
+      // ESRI/AGOL Reference, Locate Widget: http://arcg.is/2nuD00V
+      var locateBtn = new Locate({
+        view: view
+      });
+      // Add the locate widget to the top left corner of the view
+      view.ui.add(locateBtn, {
+        position: "top-left"
+      });
+
+      // ESRI/AGOL Reference, Map Layer Widget: http://arcg.is/2nuFRa1
+      var layerList = new LayerList({
+        view: view
+      });
+      // Adds widget below other elements in the top left corner of the view
+      view.ui.add(layerList, {
+        position: "top-right"
+      });
+
+      // ESRI/AGOL Reference, Map Legend Widget: http://arcg.is/2nuFPin
+      var legend = new Legend({
+        view: view,
+        layerInfos: [
+          {
+            layer: cityLayer,
+            title: "Major US Cities"
+          },
+          {
+            layer: freewayLayer,
+            title: "Major US Freeways"
+          }
+        ]
+      });
+      // Add widget to the bottom right corner of the view
+      view.ui.add(legend, "top-right");
+
       // Render layers using add function
       map.add(cityLayer);
       map.add(freewayLayer);
