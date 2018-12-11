@@ -1,4 +1,4 @@
-# 2019 NSF Civic Innovation Challenge
+# 2019 NSF Civic Innovation Challenge - Web Application
 
 ## Code for Sacramento - Contest Entry
 
@@ -33,7 +33,7 @@ Clone Github repository, then run locally as follows:
 
 ## Node.js Web Application
 
-Node.js web app using the ESRI JS API and as follows:
+Node.js web app using the ESRI JS API and as listed below; it visualizes various GIS layers for additional analysis.
 
 1. [Visit Web Application](https://ncic.herokuapp.com/)
 2. Shows ESRI AGOL major US cities and freeway layers
