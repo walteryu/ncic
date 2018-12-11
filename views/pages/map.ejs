@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 
 <!--
-  Class: HES E8, Spring 2017
-  Assignment: HW9, ESRI JS API Web App
-  Author: Walter Yu, HES
-  Live URL: https://e8-hw9.herokuapp.com/map
-  Github Repo: https://github.com/walteryu/e8-hw9
-
-  References:
-  ESRI JS API, 2D Map Template: http://arcg.is/2nytHZt
-  ESRI JS API, Layer Template: http://arcg.is/2nyNuIe
-  Heroku Node.js Tutorial: http://bit.ly/2nyFTJN
+  Title: 2019 NSF Civic Innovation Challenge
+  Description: Code for Sacramento - Contest Entry
+  Author: Walter Yu
+  Heroku: http://ncic.herokuapp.com/
+  Github: https://github.com/walteryu/ncic
 -->
 
 <html>
@@ -19,8 +14,11 @@
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
   <title>NCIC Web Application</title>
 
+  <!-- Load Heroku node.js template partial -->
+  <% include ../partials/header.ejs %>
+
   <!-- Load JS API before function calls -->
-  <script src="https://js.arcgis.com/4.3/"></script>
+  <script src="https://js.arcgis.com/4.9/"></script>
   <script>
     require([
       "esri/Map",
@@ -42,27 +40,39 @@
         container: "viewDiv",
         map: map,
 
-        // Zoom and center map on San Francisco, CA
-        zoom: 8,
-        center: [-122.431297,37.773972]
+        // Zoom and center map on Sacramento, CA
+        zoom: 11,
+        center: [-121.4944,38.5816]
       });
 
-      // FeatureLayer() Reference, ESRI JS API: http://arcg.is/2nyyvht
-      // ESRI/AGOL Map Layer Reference, US Cities: http://arcg.is/2nyyvht
-      var cityLayer = new FeatureLayer({
-        url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Major_Cities/FeatureServer"
+      // Sacramento County GIS Portal, Rivers: https://data-sacramentocounty.opendata.arcgis.com/datasets/rivers
+      var riverLayer = new FeatureLayer({
+        url: "https://services1.arcgis.com/5NARefyPVtAeuJPU/arcgis/rest/services/Rivers/FeatureServer/0/query?outFields=*&where=1%3D1"
       });
 
-      // FeatureLayer() Reference, ESRI JS API: http://arcg.is/2nyyvht
+      // Sacramento County GIS Portal, Major Roads: http://data.sacog.org/datasets/9b8d683144894beb997c4aed64c7453c_0
+      var roadLayer = new FeatureLayer({
+        url: "https://services6.arcgis.com/YBp5dUuxCMd8W1EI/arcgis/rest/services/Major_Roads/FeatureServer/0/query?outFields=*&where=1%3D1"
+      });
+
       // ESRI/AGOL Map Layer Reference, US Freeways: http://arcg.is/2nyzgr4
       var freewayLayer = new FeatureLayer({
         url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Freeway_System_analysis/FeatureServer"
       });
 
-      // FeatureLayer() Reference, ESRI JS API: http://arcg.is/2nyyvht
-      // ESRI/AGOL Reference Layer, Caltrans Districts: http://arcg.is/2pjr1PX
-      var caltransLayer = new FeatureLayer({
-        url: "https://services.gis.ca.gov/arcgis/rest/services/Economy/GOBiz_Permits_Regulations/MapServer/8/query?outFields=*&where=1%3D1"
+      // Sacramento County GIS Portal, City Boundaries: https://data-sacramentocounty.opendata.arcgis.com/datasets/city-boundaries
+      var cityLayer = new FeatureLayer({
+        url: "https://services1.arcgis.com/5NARefyPVtAeuJPU/arcgis/rest/services/City_Boundaries/FeatureServer/0/query?outFields=*&where=1%3D1"
+      });
+
+      // DWR GIS Portal, Delta Boundary: https://atlas-dwr.opendata.arcgis.com/datasets/57b02f8a5e77465f902376dbd9522585_0
+      var deltaLayer = new FeatureLayer({
+        url: "https://gis.water.ca.gov/arcgis/rest/services/Boundaries/i03_LegalDeltaBoundary/FeatureServer/0/query?outFields=*&where=1%3D1"
+      });
+
+      // DWR GIS Portal, 2012 Levee Centerlin: https://atlas-dwr.opendata.arcgis.com/datasets/df57b2bdb7954cad8c89210738cfa658_0
+      var leveeLayer = new FeatureLayer({
+        url: "https://gis.water.ca.gov/arcgis/rest/services/Structure/i17_LeveeCenterlineClass_2012/FeatureServer/0/query?outFields=*&where=1%3D1 "
       });
 
       // ESRI/AGOL Reference, Locate Widget: http://arcg.is/2nuD00V
@@ -88,16 +98,28 @@
         view: view,
         layerInfos: [
           {
-            layer: cityLayer,
-            title: "Major US Cities"
+            layer: riverLayer,
+            title: "Major Rivers"
           },
           {
             layer: freewayLayer,
-            title: "Major US Freeways"
+            title: "Major U.S. Freeways"
           },
           {
-            layer: caltransLayer,
-            title: "Caltrans District Boundaries"
+            layer: cityLayer,
+            title: "City Boundaries (Sacramento County)"
+          },
+          {
+            layer: roadLayer,
+            title: "Major Roads (Sacramento County)"
+          },
+          {
+            layer: deltaLayer,
+            title: "Delta Boundary (DWR)"
+          },
+          {
+            layer: leveeLayer,
+            title: "2012 Levee Centerline (DWR)"
           }
         ]
       });
@@ -105,14 +127,17 @@
       view.ui.add(legend, "top-right");
 
       // Render layers using add function
-      map.add(cityLayer);
+      map.add(deltaLayer);
+      map.add(roadLayer);
       map.add(freewayLayer);
-      map.add(caltransLayer);
+      map.add(cityLayer);
+      map.add(leveeLayer);
+      map.add(riverLayer);
     });
   </script>
 
   <!-- Load stylesheet/partial in order, removes gap below navbar -->
-  <link rel="stylesheet" href="https://js.arcgis.com/4.3/esri/css/main.css">
+  <link rel="stylesheet" href="https://js.arcgis.com/4.9/esri/css/main.css">
 
   <!-- Load Heroku node.js template partial -->
   <% include ../partials/header.ejs %>
