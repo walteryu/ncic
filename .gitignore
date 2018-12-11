@@ -7,6 +7,7 @@ npm-debug.log
 *.dev
 .DS_Store
 check_repo.sh
+run_nodemon.sh
 
 # Docker
 Dockerfile
