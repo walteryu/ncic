@@ -1,8 +1,8 @@
 {
-  "name": "HES E8 HW9 - Node.js Web App",
-  "description": "Node.js web app with ESRI JS API deployed on Heroku",
-  "repository": "https://github.com/heroku/node-js-getting-started",
-  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "name": "2019 NSF Civic Innovation Challenge",
+  "description": "Code for Sacramento - Contest Entry",
+  "repository": "https://github.com/walteryu/ncic",
+  "logo": "https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-map.svg",
   "keywords": ["node", "express", "static"],
   "image": "heroku/nodejs"
 }
