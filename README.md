@@ -1,29 +1,63 @@
-# HES E8, Spring 2017 HW9: Node.js Web App
+# 2019 NSF Civic Innovation Challenge
+
+## Code for Sacramento - Contest Entry
+
+### Problem Statement
+
+Resilience: Communities are at a high risk from flooding and erosion. How can we use data and technology tools, like sensing and mapping, to help protect our communities?
+
+### Introduction
+
+The Civic Innovation Challenge aims to leverage social science, data, and technology to address complex community challenges, enhance job growth and economic competitiveness, and address equity in our communities.
+
+### Planning Documents
+
+1. [Outline Presentation](https://drive.google.com/open?id=1iYygMCW_3ObGEFmXPtv7GQbgXOOSSOVZo7EJr0g58PQ)
+2. [Links and Resources](https://drive.google.com/open?id=1qJcdZpiONlpN7lYasD9VFbptphpdHHspmR13mkkPpfc)
+
+### Software and Tools
+
+Software used for this project are as follows:
+
+1. GIS Data Layers
+2. Google Earth and KML Data Layers
+3. Node.js for Web Application
+
+## Installation
+
+Clone Github repository, then run locally as follows:
+
+1. GIS Data Layers - Open Shapefiles with QGIS (open-source)
+2. Google Earth and KML Data Layers - Open with Google Earth Desktop
+3. Node.js Web Application - Install dependences and run on local server
+
+## Node.js Web Application
 
 Node.js web app using the ESRI JS API and as follows:
 
-* Live URL: https://e8-hw9.herokuapp.com/map
-* Shows ESRI AGOL major US cities and freeway layers
-* Developed using Node.js and Express web frameworks
-* ESRI and Heroku templates used as referenced below
+1. [Visit Web Application](https://ncic.herokuapp.com/)
+2. Shows ESRI AGOL major US cities and freeway layers
+3. Developed using Node.js and Express web frameworks
+4. ESRI and Heroku templates used as referenced below
 
 Details about the map and feature layers:
 
-* Map is centered on San Francisco, CA
-* City/freeway layers are added with FeatureLayer()
+1. [ACOE/AGOL Portal](https://geoplatform-usace.opendata.arcgis.com/)
+2. [Sacramento Open Data GIS Portal](https://data-sacramentocounty.opendata.arcgis.com/)
+3. [Sacramento Watershed Program GIS Portal](https://data.sacriver.org/)
 
 ## References:
 
 Web app was developed using these templates/tutorials:
 
-* ESRI JS API, 2D Map Template: http://arcg.is/2nytHZt
-* ESRI JS API, Layer Template: http://arcg.is/2nyNuIe
-* ESRI AGOL, US Major Cities Layer: http://arcg.is/2nyyvht
-* Heroku Node.js Tutorial: http://bit.ly/2nyFTJN
+1. [ESRI/JS API: 2D Map Template](http://arcg.is/2nytHZt)
+2. [ESRI JS API: Layer Template](http://arcg.is/2nyNuIe)
+3. [ESRI AGOL: US Major Cities Layer](http://arcg.is/2nyyvht)
+4. [Heroku Node.js Tutorial](http://bit.ly/2nyFTJN)
 
 # Heroku Node.js Tutorial Instructions
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+A barebones Node.js app using [Express.js](http://expressjs.com/).
 
 This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
 
