@@ -19,9 +19,12 @@ The Civic Innovation Challenge aims to leverage social science, data, and techno
 
 Software used for this project are as follows:
 
-1. GIS Data Layers
-2. Google Earth and KML Data Layers
-3. Node.js for Web Application
+1. [ESRI Open Data GIS Portal](https://hub.arcgis.com/pages/open-data)
+2. [Google Earth Pro](https://www.google.com/earth/versions/)
+3. [Node.js](https://nodejs.org/en/)
+4. [Express.js](https://expressjs.com/)
+5. [NPM Package Manager](https://www.npmjs.com/)
+6. [QGIS](https://qgis.org/en/site/forusers/download.html)
 
 ## Installation
 
@@ -30,6 +33,7 @@ Clone Github repository, then run locally as follows:
 1. GIS Data Layers - Open Shapefiles with QGIS (open-source)
 2. Google Earth and KML Data Layers - Open with Google Earth Desktop
 3. Node.js Web Application - Install dependences and run on local server
+4. Node.js Deployment - Heroku instructions listed below for reference
 
 ## Node.js Web Application
 
